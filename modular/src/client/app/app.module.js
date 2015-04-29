@@ -21,6 +21,8 @@
          * Feature areas
          */
         'app.avengers',
+        'app.comics',
+        'app.series',
         'app.dashboard',
         'app.layout'
     ]);

@@ -8,6 +8,8 @@ var merge = require('merge-stream');
 var paths = require('./gulp.config.json');
 var plato = require('plato');
 var plug = require('gulp-load-plugins')();
+var ts = require('gulp-typescript')
+var tslint = require('gulp-tslint');
 var reload = browserSync.reload;
 
 var colors = plug.util.colors;
@@ -19,6 +21,20 @@ var port = process.env.PORT || 7203;
  * List the available gulp tasks
  */
 gulp.task('help', plug.taskListing);
+
+
+
+/**
+ * Lint the code
+ * @return {Stream}
+ */
+gulp.task('analyze-ts', function() {
+    log('Analyzing source with TSLint');
+
+    return gulp.src(paths.ts)
+        .pipe(tslint())
+        .pipe(tslint.report('verbose'));
+});
 
 /**
  * Lint the code, create coverage report, and a visualizer
@@ -61,7 +77,22 @@ gulp.task('templatecache', function() {
  * Minify and bundle the app's JavaScript
  * @return {Stream}
  */
-gulp.task('js', ['analyze', 'templatecache'], function() {
+gulp.task('ts', ['analyze-ts'], function() {
+    log('Compiling the app\'s TypeScript');
+
+    var source = paths.ts;
+    return gulp
+        .src(source)
+        .pipe(ts({
+
+        }));
+});
+
+/**
+ * Minify and bundle the app's JavaScript
+ * @return {Stream}
+ */
+gulp.task('js', [/*'analyze', */'templatecache'], function() {
     log('Bundling, minifying, and copying the app\'s JavaScript');
 
     var source = [].concat(paths.js, paths.build + 'templates.js');
@@ -164,7 +195,7 @@ gulp.task('images', function() {
  * rev, but no map
  * @return {Stream}
  */
-gulp.task('rev-and-inject', ['js', 'vendorjs', 'css', 'vendorcss'], function() {
+gulp.task('rev-and-inject', ['ts', 'js', 'vendorjs', 'css', 'vendorcss'], function() {
     log('Rev\'ing files and building index.html');
 
     var minified = paths.build + '**/*.min.*';
@@ -248,6 +279,11 @@ gulp.task('watch', function() {
     var css = ['gulpfile.js'].concat(paths.css, paths.vendorcss);
     var images = ['gulpfile.js'].concat(paths.images);
     var js = ['gulpfile.js'].concat(paths.js);
+    var ts = ['gulpfile.js'].concat(paths.ts);
+
+    gulp
+        .watch(ts, ['ts', 'js', 'vendorjs'])
+        .on('change', logWatch);
 
     gulp
         .watch(js, ['js', 'vendorjs'])
@@ -290,7 +326,7 @@ gulp.task('autotest', function(done) {
  * serve the dev environment, with debug,
  * and with node inspector
  */
-gulp.task('serve-dev-debug', function() {
+gulp.task('serve-dev-debug', ['ts'], function() {
     serve({
         mode: 'dev',
         debug: '--debug'
@@ -301,7 +337,7 @@ gulp.task('serve-dev-debug', function() {
  * serve the dev environment, with debug-brk,
  * and with node inspector
  */
-gulp.task('serve-dev-debug-brk', function() {
+gulp.task('serve-dev-debug-brk', ['ts'], function() {
     serve({
         mode: 'dev',
         debug: '--debug-brk'
@@ -311,7 +347,7 @@ gulp.task('serve-dev-debug-brk', function() {
 /**
  * serve the dev environment
  */
-gulp.task('serve-dev', function() {
+gulp.task('serve-dev', ['ts'], function() {
     serve({
         mode: 'dev'
     });
@@ -320,7 +356,7 @@ gulp.task('serve-dev', function() {
 /**
  * serve the build environment
  */
-gulp.task('serve-build', function() {
+gulp.task('serve-build', ['ts'], function() {
     serve({
         mode: 'build'
     });

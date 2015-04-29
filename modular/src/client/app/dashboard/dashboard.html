@@ -15,7 +15,7 @@
                         <li class="bblue">
                             <div class="pull-left avenger-logo"></div>
                             <div class="datas-text pull-right">
-                                <span class="bold">{{vm.avengerCount}}</span> Cast
+                                <span class="bold">{{avengerCount}}</span> Cast
                             </div>
                             <div class="clearfix"></div>
                         </li>
@@ -37,7 +37,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-ng-repeat="a in vm.avengers">
+                                    <tr data-ng-repeat="a in cast">
                                         <td>{{a.name}}</td>
                                         <td>{{a.character}}</td>
                                     </tr>
@@ -51,10 +51,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="widget wlightblue">
-                        <div data-cc-widget-header title="{{vm.news.title}}"
+                        <div data-cc-widget-header title="{{news.title}}"
                              allow-collapse="true"></div>
                         <div class="widget-content text-center text-info">
-                            <small>{{vm.news.description}}</small>
+                            <small>{{news.description}}</small>
                         </div>
                         <div class="widget-foot">
                             <div class="clearfix"></div>

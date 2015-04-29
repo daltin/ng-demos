@@ -38,7 +38,7 @@ describe('app.avengers', function() {
             });
 
             it('should have 5 Avengers', function() {
-                expect(controller.avengers).to.have.length(5);
+                expect(controller.series).to.have.length(5);
             });
         });
     });

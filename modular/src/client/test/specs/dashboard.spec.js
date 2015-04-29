@@ -42,7 +42,7 @@ describe('app.dashboard', function() {
             });
 
             it('should have at least 1 avenger', function () {
-                expect(controller.avengers).to.have.length.above(0);
+                expect(controller.series).to.have.length.above(0);
             });
 
             it('should have Avenger Count of 5', function () {

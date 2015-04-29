@@ -36,6 +36,17 @@ journal
 *.exe
 *.o
 *.so
+/modular/src/client/app/avengers/*.js
+/modular/src/client/app/avengers/*.*.js
+/modular/src/client/app/avengers/*.js.map
+/modular/src/client/app/comics/*.js
+/modular/src/client/app/comics/*.js.map
+/modular/src/client/app/series/*.js
+/modular/src/client/app/series/*.js.map
+/modular/src/client/app/blocks/**/*.js
+/modular/src/client/app/blocks/**/*.js.map
+/modular/src/client/app/core/*.js
+/modular/src/client/app/core/*.js.map
 
 # Packages #
 ############

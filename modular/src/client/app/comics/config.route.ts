@@ -1,8 +1,10 @@
+/// <reference path="../../../../typings/angularjs/angular.d.ts" />
+
 (function() {
     'use strict';
 
     angular
-        .module('app.avengers')
+        .module('app.comics')
         .run(appRun);
 
     // appRun.$inject = ['routehelper']
@@ -15,15 +17,15 @@
     function getRoutes() {
         return [
             {
-                url: '/avengers',
+                url: '/comics',
                 config: {
-                    templateUrl: 'app/avengers/avengers.html',
-                    controller: 'Avengers',
+                    templateUrl: 'app/comics/comics.html',
+                    controller: 'Comics',
                     controllerAs: 'vm',
-                    title: 'avengers',
+                    title: 'comics',
                     settings: {
-                        nav: 2,
-                        content: '<i class="fa fa-lock"></i> Avengers'
+                        nav: 3,
+                        content: '<i class="fa fa-lock"></i> Comics'
                     }
                 }
             }

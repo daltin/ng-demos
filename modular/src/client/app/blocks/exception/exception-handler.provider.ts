@@ -1,30 +1,27 @@
+/// <reference path="../../../../../typings/angularjs/angular.d.ts" />
+
 // Include in index.html so that app level exceptions are handled.
 // Exclude from testRunner.html which should run exactly what it wants to run
-(function() {
+module blocks.exception {
     'use strict';
-
-    angular
-        .module('blocks.exception')
-        .provider('exceptionHandler', exceptionHandlerProvider)
-        .config(config);
 
     /**
      * Must configure the exception handling
      * @return {[type]}
      */
-    function exceptionHandlerProvider() {
+    class exceptionHandlerProvider implements ng.IServiceProvider {
         /* jshint validthis:true */
-        this.config = {
+        config = {
             appErrorPrefix: undefined
         };
 
-        this.configure = function (appErrorPrefix) {
+        configure(appErrorPrefix) {
             this.config.appErrorPrefix = appErrorPrefix;
-        };
+        }
 
-        this.$get = function() {
+        $get() {
             return {config: this.config};
-        };
+        }
     }
 
     /**
@@ -63,4 +60,9 @@
             logger.error(exception.message, errorData);
         };
     }
-})();
+
+    angular
+        .module('blocks.exception')
+        .provider('exceptionHandler', exceptionHandlerProvider)
+        .config(config);
+}

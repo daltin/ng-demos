@@ -19,7 +19,6 @@
                 config: {
                     templateUrl: 'app/dashboard/dashboard.html',
                     controller: 'Dashboard',
-                    controllerAs: 'vm',
                     title: 'dashboard',
                     settings: {
                         nav: 1,
