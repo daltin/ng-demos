@@ -1,4 +1,5 @@
 /// <reference path="../../../../typings/angularjs/angular.d.ts" />
+/// <reference path="../blocks/logger/logger.ts" />
 
 'use strict';
 
@@ -8,7 +9,7 @@ module core.data {
         getAvengerCount(): ng.IPromise<number>;
         getAvengers(): ng.IPromise<model.IAvenger[]>;
         getComics(): ng.IPromise<model.IComic[]>;
-        getSeries(): ng.IPromise<model.ISeries[]>;
+        getMovies(): ng.IPromise<model.IMovie[]>;
         ready(promises?): any;
     }
 
@@ -18,20 +19,21 @@ module core.data {
         primePromise;
 
         /* @ngInject */
-        constructor(private $http,
-                    private $location,
-                    private $q,
+        constructor(private $http: ng.IHttpService,
+                    private $location: ng.ILocationService,
+                    private $q: ng.IQService,
                     private exception,
-                    private logger) {
+                    private logger: blocks.logger.ILogger) {
 
         }
 
         getAvengers() {
-            return this.$http.get('/api/maa')
-                .then((data) => data.data[0].data.results)
-                .catch(function (message) {
+            return this.$http.get<model.IAvenger[]>('/api/maa')
+            .then(data => data.data)
+            .catch((message) => {
                     this.exception.catcher('XHR Failed for getAvengers')(message);
                     this.$location.url('/');
+                    return <model.IAvenger[]>[];
                 });
         }
 
@@ -63,13 +65,23 @@ module core.data {
         }
 
         getComics() {
-            var comics = [];
-            return this.$q.when(comics);
+            return this.$http.get<model.IComic[]>('/api/comics')
+            .then(data => data.data)
+            .catch((message) => {
+                    this.exception.catcher('XHR Failed for getComics')(message);
+                    this.$location.url('/');
+                    return <model.IComic[]>[];
+                });
         }
 
-        getSeries() {
-            var series = [];
-            return this.$q.when(series);
+        getMovies() {
+            return this.$http.get<model.IMovie[]>('/api/movies')
+            .then(data => data.data)
+            .catch((message) => {
+                    this.exception.catcher('XHR Failed for getMovies')(message);
+                    this.$location.url('/');
+                    return <model.IMovie[]>[];
+                });
         }
 
         private prime() {
@@ -89,14 +101,14 @@ module core.data {
             var readyPromise = this.primePromise || this.prime();
 
             return readyPromise
-                .then(function () {
+                .then(() => {
                     return this.$q.all(nextPromises);
                 })
                 .catch(this.exception.catcher('"ready" function failed'));
         }
     }
 
-    (function () {
+    (() => {
         angular
             .module('app.core')
             .service('dataservice', DataService);
@@ -114,11 +126,14 @@ module core.model {
     }
 
     export interface IComic {
-
+        name: string;
+        coverUrl: string;
     }
 
-    export interface ISeries {
-
+    export interface IMovie {
+	   name: string;
+       coverUrl: string;
+       releaseDate: Date;
     }
 }
 

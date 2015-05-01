@@ -7,22 +7,22 @@
                     <div class="widget-content user">
                         <!--<pre>{{vm.avengers.data | json}}</pre>-->
 
-                        <input data-ng-model="vm.filter.name" placeholder="Find Avengers by name" type="search"/>
+                        <input data-ng-model="vm.filter.name" placeholder="Find movies by name" type="search"/>
                         <table class="table table-condensed table-striped">
                             <thead>
                             <tr>
                                 <th></th>
-                                <th>Character</th>
-                                <th>Description</th>
+                                <th>Title</th>
+                                <th>Release Date</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-ng-repeat="c in vm.series | filter:vm.filter track by c.id">
+                            <tr data-ng-repeat="c in vm.movies | filter:vm.filter track by c.name">
                                 <td><img
-                                        ng-src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}"
+                                        ng-src="{{c.coverUrl}}"
                                         class="avenger-thumb img-rounded"/></td>
                                 <td><span class="avenger-name">{{c.name}}</span></td>
-                                <td>{{c.description | limitTo: 2000 }} ...</td>
+                                <td>{{c.releaseDate | date: 'MMMM d, yyyy' }}</td>
                             </tr>
                             </tbody>
                         </table>

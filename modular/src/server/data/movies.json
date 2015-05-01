@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Guardians of the Galaxy",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/4/00/5398c952860ad/portrait_incredible.jpg",
+    "releaseDate": "2014-08-01T00:00:00"
+  },
+  {
+    "name": "Avengers: Age of Ultron",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/2/f0/5519812dc0d04/portrait_incredible.jpg",
+    "releaseDate": "2015-05-01T00:00:00"
+  },
+  {
+    "name": "Captain America: The Winter Soldier",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/6/60/54db8860a5f04/portrait_incredible.jpg",
+    "releaseDate": "2014-04-04T00:00:00"
+  },
+  {
+    "name": "Ant-Man",
+    "coverUrl": "http://i.annihil.us/u/prod/marvel/i/mg/f/a0/521f7280b2312/portrait_incredible.jpg",
+    "releaseDate": "2015-07-17T00:00:00"
+  },
+  {
+    "name": "Thor: The Dark World",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/b/f0/521f6e03ebfb3/portrait_incredible.jpg",
+    "releaseDate": "2013-11-08T00:00:00"
+  },
+  {
+    "name": "Iron Man 3",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/c/a0/521f70fab9fd8/portrait_incredible.jpg",
+    "releaseDate": "2013-05-03T00:00:00"
+  },
+  {
+    "name": "Marvel's The Avengers",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/6/50/521f70b81f7d3/portrait_incredible.jpg",
+    "releaseDate": "2012-05-04T00:00:00"
+  },
+  {
+    "name": "Captain America: The First Avenger",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/c/30/521f6f84ecba1/portrait_incredible.jpg",
+    "releaseDate": "2011-07-22T00:00:00"
+  },
+  {
+    "name": "Thor",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/3/a0/521f71d0689e3/portrait_incredible.jpg",
+    "releaseDate": "2011-05-06T00:00:00"
+  },
+  {
+    "name": "Iron Man 2",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/8/60/521f703f2ab1a/portrait_incredible.jpg",
+    "releaseDate": "2010-05-07T00:00:00"
+  },
+  {
+    "name": "The Incredible Hulk",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/e/f0/521f75adeadc2/portrait_incredible.jpg",
+    "releaseDate": "2008-06-13T00:00:00"
+  },
+  {
+    "name": "Iron Man",
+    "coverUrl": "http://x.annihil.us/u/prod/marvel/i/mg/f/10/521f6ebeb4bb6/portrait_incredible.jpg",
+    "releaseDate": "2008-05-02T00:00:00"
+  }
+]

@@ -22,7 +22,7 @@
          */
         'app.avengers',
         'app.comics',
-        'app.series',
+        'app.movies',
         'app.dashboard',
         'app.layout'
     ]);

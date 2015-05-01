@@ -1,17 +1,4 @@
 [
-    {
-        "code": 200,
-        "status": "Ok",
-        "copyright": "© 2014 MARVEL",
-        "attributionText": "Data provided by Marvel. © 2014 MARVEL",
-        "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2014 MARVEL</a>",
-        "etag": "90c4f4cccfd5340ce2dd99146ee5ff6aed497e69",
-        "data": {
-            "offset": 0,
-            "limit": 20,
-            "total": 7,
-            "count": 7,
-            "results": [
                 {
                     "id": 1017109,
                     "name": "Black Widow/Natasha Romanoff (MAA)",
@@ -300,6 +287,3 @@
                     ]
                 }
             ]
-        }
-    }
-]

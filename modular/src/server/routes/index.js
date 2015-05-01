@@ -2,13 +2,21 @@ module.exports = function(app) {
     var jsonfileservice = require('./utils/jsonfileservice')();
 
     app.get('/api/maa', getMaa);
+    app.get('/api/comics', getComics);
+    app.get('/api/movies', getMovies);
 
     function getMaa(req, res, next) {
         var json = jsonfileservice.getJsonFromFile('/../../data/maa.json');
-        json[0].data.results.forEach(function(character) {
-            var pos = character.name.indexOf('(MAA)');
-            character.name = character.name.substr(0, pos - 1);
-        });
+        res.send(json);
+    }
+    
+    function getComics(req, res, next) {
+        var json = jsonfileservice.getJsonFromFile('/../../data/comics.json');
+        res.send(json);
+    }
+    
+    function getMovies(req, res, next) {
+        var json = jsonfileservice.getJsonFromFile('/../../data/movies.json');
         res.send(json);
     }
 };

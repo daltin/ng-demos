@@ -17,7 +17,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-ng-repeat="c in vm.series | filter:vm.filter track by c.id">
+                            <tr data-ng-repeat="c in vm.avengers | filter:vm.filter track by c.id">
                                 <td><img
                                         ng-src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}"
                                         class="avenger-thumb img-rounded"/></td>

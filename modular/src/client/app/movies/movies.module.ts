@@ -3,5 +3,5 @@
 (() => {
     'use strict';
 
-    angular.module('app.series', []);
+    angular.module('app.movies', []);
 })();

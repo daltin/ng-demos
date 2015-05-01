@@ -5,7 +5,7 @@
     'use strict';
 
     angular
-        .module('app.series')
+        .module('app.movies')
         .run(appRun);
 
     /* @ngInject */
@@ -16,15 +16,15 @@
     function getRoutes() {
         return [
             {
-                url: '/series',
+                url: '/movies',
                 config: {
-                    templateUrl: 'app/series/series.html',
-                    controller: 'Series',
+                    templateUrl: 'app/movies/movies.html',
+                    controller: 'Movies',
                     controllerAs: 'vm',
-                    title: 'series',
+                    title: 'movies',
                     settings: {
                         nav: 4,
-                        content: '<i class="fa fa-lock"></i> Series'
+                        content: '<i class="fa fa-film"></i> Movies'
                     }
                 }
             }

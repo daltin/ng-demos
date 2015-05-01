@@ -11,7 +11,7 @@
     function Avengers(dataservice, logger) {
         /*jshint validthis: true */
         var vm = this;
-        vm.series = [];
+        vm.avengers = [];
         vm.title = 'Avengers';
 
         activate();
@@ -24,8 +24,8 @@
 
         function getAvengers() {
             return dataservice.getAvengers().then(function(data) {
-                vm.series = data;
-                return vm.series;
+                vm.avengers = data;
+                return vm.avengers;
             });
         }
     }

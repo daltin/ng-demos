@@ -110,5 +110,5 @@ module blocks.router {
     angular
         .module('blocks.router')
         .provider('routehelperConfig', RouteHelperConfig)
-        .factory('routehelper', RouteHelper);
+        .service('routehelper', RouteHelper);
 }

@@ -84,7 +84,9 @@ gulp.task('ts', ['analyze-ts'], function() {
     return gulp
         .src(source)
         .pipe(ts({
-
+            "module": "amd",
+            "preserveConstEnums": true,
+            "sourceMap": true
         }));
 });
 

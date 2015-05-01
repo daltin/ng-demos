@@ -27,8 +27,8 @@
     "./src/client/content/styles.css"
   ],
   "ts": [
-    "./src/client/app/**/*module*.ts",
-    "./src/client/app/**/*.ts"
+    "./src/**/*.module.ts",
+    "./src/**/*.ts"
   ],
   "js": [
     "./src/client/app/**/*module*.js",

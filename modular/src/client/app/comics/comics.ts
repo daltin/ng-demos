@@ -13,7 +13,7 @@
     function Comics(dataservice: core.data.IDataService,
                     logger: blocks.logger.ILogger) {
         var vm = this;
-        vm.series = [];
+        vm.comics = [];
         vm.title = 'Comics';
 
         activate();

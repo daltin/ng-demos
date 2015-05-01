@@ -41,8 +41,8 @@ journal
 /modular/src/client/app/avengers/*.js.map
 /modular/src/client/app/comics/*.js
 /modular/src/client/app/comics/*.js.map
-/modular/src/client/app/series/*.js
-/modular/src/client/app/series/*.js.map
+/modular/src/client/app/movies/*.js
+/modular/src/client/app/movies/*.js.map
 /modular/src/client/app/blocks/**/*.js
 /modular/src/client/app/blocks/**/*.js.map
 /modular/src/client/app/core/*.js

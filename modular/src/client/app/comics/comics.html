@@ -17,9 +17,9 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-ng-repeat="c in vm.comics | filter:vm.filter track by c.id">
+                            <tr data-ng-repeat="c in vm.comics | filter:vm.filter track by c.name">
                                 <td><img
-                                        ng-src="{{c.thumbnail.path}}.{{c.thumbnail.extension}}"
+                                        ng-src="{{c.coverUrl}}"
                                         class="avenger-thumb img-rounded"/></td>
                                 <td><span class="avenger-name">{{c.name}}</span></td>
                                 <td>{{c.description | limitTo: 2000 }} ...</td>
