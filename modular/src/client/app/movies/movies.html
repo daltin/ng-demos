@@ -17,7 +17,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-ng-repeat="c in vm.movies | filter:vm.filter track by c.name">
+                            <tr data-ng-repeat="c in vm.movies | orderBy: 'releaseDate' : true | filter:vm.filter track by c.name">
                                 <td><img
                                         ng-src="{{c.coverUrl}}"
                                         class="avenger-thumb img-rounded"/></td>

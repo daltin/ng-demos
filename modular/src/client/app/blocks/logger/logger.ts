@@ -38,7 +38,7 @@ module blocks.logger {
 
     class Logger implements ILogger {
 
-        showToasts: boolean;
+        showToasts = true;
         log:ng.ILogCall;
 
         /* @ngInject */

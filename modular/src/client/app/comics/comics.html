@@ -12,17 +12,15 @@
                             <thead>
                             <tr>
                                 <th></th>
-                                <th>Character</th>
-                                <th>Description</th>
+                                <th>Comic</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-ng-repeat="c in vm.comics | filter:vm.filter track by c.name">
+                            <tr data-ng-repeat="c in vm.comics | orderBy: 'name' | filter:vm.filter track by c.name">
                                 <td><img
                                         ng-src="{{c.coverUrl}}"
                                         class="avenger-thumb img-rounded"/></td>
                                 <td><span class="avenger-name">{{c.name}}</span></td>
-                                <td>{{c.description | limitTo: 2000 }} ...</td>
                             </tr>
                             </tbody>
                         </table>
