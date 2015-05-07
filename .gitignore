@@ -12,6 +12,7 @@ obj
 node_modules
 /modular/client/build
 /modular/build
+/modular/typings/**/*.js
 bower_components
 **/test/coverage
 report/
