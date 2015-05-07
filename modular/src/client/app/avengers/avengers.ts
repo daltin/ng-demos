@@ -47,30 +47,42 @@
             //      any
             //      void
             //      {}
+            
             // variable type inference - initialize during declaration
             var fur = 'furry';
-            fur = true;
+            // this is very naughty, don't do it!
+            //fur = true;
+            
             // parameter type inference - set a default value
-            furryParam = 'hairy'
+            // also naughty, though furry, this param cannot be 'hairy'
+            //furryParam = 'hairy'
             var amIFurry = furryParam;
             var hairs = 'Lots of hair, almost to the point of being fur-like';
+            
             // lib.d.ts, parameter list, optional parameters
             hairs.split(',');
+            
             // date inference
             var someFurryDate = new Date();
             someFurryDate.setHours(10);
+            
             // number inference
             var someFurryNumber = Date.now();
             someFurryNumber.toPrecision(3);
+            
             // using math
             var thePowerInFur = Math.pow(2,16);
+            
             // infer array only
             var furryArray = [];
             furryArray.push(1, 'coat', true, new Date());
+            
             // infers both array and string            
             var furryDogs = ['spot','rover','fido'];
+            
             // callback 
             furryDogs.filter(function (dogName) { return dogName.length > 4});
+            
             // what if I don't want to infer, want dynamic?
             // does not infer
             var noFur;
@@ -80,6 +92,7 @@
             noFur = new Date();
             furlessParam = {very: 'smooth'};
             furlessParam = true;
+            
             // infers any
             var stillNoFur = undefined;
             stillNoFur = true;
@@ -87,12 +100,15 @@
             var againNoFur = null;
             againNoFur = 'loose';
             againNoFur = {isLoose: true};
+            
             // infers {}
             var infersNoFur = {};
             infersNoFur = true;
             infersNoFur = 'none';
+            
             // angular type help
             // back to top
+            
             // summary
             // OPT IN!
             // baby step 1 - Plain Old JavaScript            // - Change file extension
