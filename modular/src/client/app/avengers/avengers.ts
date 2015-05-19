@@ -28,6 +28,7 @@
                 return vm.avengers;
             });
         }
+        
         function furryStuff(furlessParam, furryParam = true) {
             // reading the type notations: 
             //      myVar: someType
@@ -50,21 +51,20 @@
             
             // variable type inference - initialize during declaration
             var fur = 'furry';
-            // this is very naughty, don't do it!
             //fur = true;
             
             // parameter type inference - set a default value
-            // also naughty, though furry, this param cannot be 'hairy'
             //furryParam = 'hairy'
             var amIFurry = furryParam;
-            var hairs = 'Lots of hair, almost to the point of being fur-like';
             
+            var hairs = 'Lots of hair, almost to the point of being fur-like';
             // lib.d.ts, parameter list, optional parameters
             hairs.split(',');
             
+            
             // date inference
             var someFurryDate = new Date();
-            someFurryDate.setHours(10);
+            someFurryDate.setHours(1);
             
             // number inference
             var someFurryNumber = Date.now();
@@ -81,7 +81,8 @@
             var furryDogs = ['spot','rover','fido'];
             
             // callback 
-            furryDogs.filter(function (dogName) { return dogName.length > 4});
+            furryDogs.filter(function (dogName) { return dogName.length > 5});
+            
             
             // what if I don't want to infer, want dynamic?
             // does not infer
@@ -90,6 +91,7 @@
             noFur = true;
             noFur = 42;
             noFur = new Date();
+            
             furlessParam = {very: 'smooth'};
             furlessParam = true;
             
@@ -97,6 +99,7 @@
             var stillNoFur = undefined;
             stillNoFur = true;
             stillNoFur = [];
+            
             var againNoFur = null;
             againNoFur = 'loose';
             againNoFur = {isLoose: true};
@@ -111,7 +114,8 @@
             
             // summary
             // OPT IN!
-            // baby step 1 - Plain Old JavaScript            // - Change file extension
+            // baby step 1 - Plain Old JavaScript
+            // - Change file extension
             // - Use type inference
             // - Import type libraries
         }
