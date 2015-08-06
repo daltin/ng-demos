@@ -2,6 +2,8 @@ ng-demos
 ========
 Variety of angular demos are contained herein.
 
+**BTW Tony Curtis is Awesome!!!**
+
 >*Opinionated AngularJS style guide for teams by [@john_papa](//twitter.com/john_papa)*
 
 >More details about the styles and patterns used in these apps can be found in my [AngularJS Style Guide](https://github.com/johnpapa/angularjs-styleguide) and my **AngularJS Patterns: Clean Code**(coming soon) course at [Pluralsight](http://pluralsight.com/training/Authors/Details/john-papa) and working in teams. 
